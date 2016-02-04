@@ -1,8 +1,8 @@
 {
-  "name": "cg-api-resource",
+  "name": "ng-api-resource",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/cg-api-resource.js",
+  "main": "dist/ng-api-resource.js",
   "directories": {
     "doc": "docs",
     "test": "tests"

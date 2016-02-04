@@ -1,7 +1,7 @@
 {
-  "name": "cg-api-resource",
+  "name": "ng-api-resource",
   "description": "",
-  "main": "dist/cg-api-resource.js",
+  "main": "dist/ng-api-resource.js",
   "authors": [
     "Nicolas Gonzalvez <cristopher.gonzalvez@gmail.com>"
   ],
