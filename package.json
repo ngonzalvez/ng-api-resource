@@ -1,0 +1,32 @@
+{
+  "name": "cg-api-resource",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cg-api-resource.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angularjs",
+    "api",
+    "resource",
+    "data",
+    "type",
+    "model"
+  ],
+  "author": "Nicolas Gonzalvez <cristopher.gonzalvez@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}

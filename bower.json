@@ -1,0 +1,26 @@
+{
+  "name": "cg-api-resource",
+  "description": "",
+  "main": "dist/cg-api-resource.js",
+  "authors": [
+    "Nicolas Gonzalvez <cristopher.gonzalvez@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angularjs",
+    "api",
+    "resource",
+    "data",
+    "type",
+    "model"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
