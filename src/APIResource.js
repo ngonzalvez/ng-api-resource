@@ -1,7 +1,7 @@
 (function(ng) {
   'use strict';
 
-  function APIResourceFactory(APIResourceManager, $resource) {
+  function APIResourceFactory(APIResourceManager) {
     class APIResource {
       static URL = '';
       static Model = null;
@@ -53,7 +53,9 @@
           TypeClass = Resource.schema[property];
 
           // Cast the value to the type defined in the schema.
-          if (
+          if (value === null || value === undefined) {
+            value = null;
+          } else if (
             (typeof value === 'object' || TypeClass === Date)
             && !(value instanceof TypeClass)
           ) {
@@ -74,7 +76,7 @@
        * @return {Promise}  The saving promise.
        */
       save() {
-        const ResourceModel = this.Model;
+        const ResourceModel = this.constructor.Model;
         const data = this._copySchemaData(this, {});
         const instance = new ResourceModel(data);
 
@@ -101,8 +103,7 @@
   }
 
   APIResourceFactory.$inject = [
-    'APIResourceManager',
-    '$resource'
+    'APIResourceManager'
   ];
 
   ng.module('cg.api')

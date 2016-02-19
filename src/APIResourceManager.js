@@ -9,22 +9,16 @@
         this.resource = resource;
         this.resource.objects = [];
         this.resource.Model = this.getModel();
-
-        console.log(this.resource.name, this.resource.URL);
       }
 
       getModel() {
         return $resource(
           this.resource.URL,
-          {},   // TODO: make default params customizable.
+          {},
           {
             query: {
-              method: 'GET',
-              isArray: true,
-              transformResponse: res => {
-                console.log(res);
-                return angular.fromJson(res).data;
-              }
+              isArray: false,
+              method: 'GET'
             }
           }
         );
@@ -98,18 +92,15 @@
         const Resource = this.resource;
         const deferred = $q.defer();
 
-        let items = Resource.Model.query(
+        let response = Resource.Model.query(
           params,
           () => {
-            items = items.map(data => new Resource(data));
-            console.log(Resource.name + 's', items);
+            let items = response.data.map(data => new Resource(data));
 
+            items.totalCount = response.count;
             deferred.resolve(items);
           },
-          err => {
-            console.log('An error happened', err);
-            deferred.reject(err);
-          }
+          err => deferred.reject(err)
         );
 
         return deferred.promise;
