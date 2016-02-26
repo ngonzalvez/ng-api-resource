@@ -14,7 +14,7 @@
       getModel() {
         return $resource(
           this.resource.URL,
-          {},
+          this.resource.URLParams,
           {
             query: {
               isArray: false,
@@ -28,7 +28,7 @@
         const Resource = this.resource;
         const instance = new Resource(data);
 
-        return instance.$save().$promise;
+        return instance.$save();
       }
 
       /**

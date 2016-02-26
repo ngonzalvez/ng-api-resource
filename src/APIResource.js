@@ -4,6 +4,7 @@
   function APIResourceFactory(APIResourceManager) {
     class APIResource {
       static URL = '';
+      static URLParams = {};
       static Model = null;
       static schema = {};
       static primaryKey = 'id';
