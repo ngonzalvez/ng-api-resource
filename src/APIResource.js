@@ -80,7 +80,7 @@
         const data = this._copySchemaData(this, {});
         const instance = new ResourceModel(data);
 
-        return instance.$save().$promise;
+        return instance.$save();
       }
 
       /**
@@ -95,7 +95,7 @@
 
         instance[pk] = this[pk];
 
-        return instance.$delete().$promise;
+        return instance.$delete();
       }
     }
 
