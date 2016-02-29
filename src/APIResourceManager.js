@@ -12,16 +12,18 @@
       }
 
       getModel() {
-        return $resource(
-          this.resource.URL,
-          this.resource.URLParams,
-          {
-            query: {
-              isArray: false,
-              method: 'GET'
-            }
+        const methods = {
+          query: {
+            isArray: false,
+            method: 'GET'
           }
-        );
+        };
+
+        for (let name in this.resource.methods) {
+          methods[name] = this.resource.methods[name];
+        }
+
+        return $resource(this.resource.URL, this.resource.URLParams, methods);
       }
 
       create(data) {

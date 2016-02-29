@@ -6,6 +6,7 @@
       static URL = '';
       static URLParams = {};
       static Model = null;
+      static methods = {};
       static schema = {};
       static primaryKey = 'id';
       static manager = new APIResourceManager(APIResource);
