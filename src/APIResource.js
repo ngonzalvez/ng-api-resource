@@ -77,10 +77,10 @@
        *
        * @return {Promise}  The saving promise.
        */
-      save() {
+      save(data) {
         const ResourceModel = this.constructor.Model;
-        const data = this._copySchemaData(this, {});
-        const instance = new ResourceModel(data);
+        const resourceData = data || this._copySchemaData(this, {});
+        const instance = new ResourceModel(resourceData);
 
         return instance.$save();
       }
