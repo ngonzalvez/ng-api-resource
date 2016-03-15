@@ -1,6 +1,6 @@
 {
   "name": "ng-api-resource",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "main": "dist/ng-api-resource.js",
   "directories": {
